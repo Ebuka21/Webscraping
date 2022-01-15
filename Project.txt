@@ -1,0 +1,100 @@
+Title: Property Info Webscraping
+
+Purpose: Python program will be written to webscrape a property site for houses for rent and get relevant information and store in an excel sheet
+
+Site: https://nigeriapropertycentre.com/
+
+Advanced: Take input from user to perform a search and populate the excel sheet
+
+information to be collected:
+1. Exact link to house for rent
+2. location of the house
+3. price of the house
+4. phone number(s)
+
+
+initial url = https://nigeriapropertycentre.com/
+
+test url's
+
+1. rent in lekki;1 bedroom;maxprice = 800000
+https://nigeriapropertycentre.com/for-rent/lagos/lekki?bedrooms=1&maxprice=800000
+
+2. rent in ajah; 1 bedroom; maxprice = 800000
+https://nigeriapropertycentre.com/for-rent/lagos/ajah?bedrooms=1&maxprice=800000&q=for-rent+lagos+ajah+1+bedrooms+maxprice+800000
+
+3. rent in sangotedo ajah; 1 bedroom; maxprice = 800000
+https://nigeriapropertycentre.com/for-rent/lagos/ajah/sangotedo?bedrooms=1&maxprice=800000&selectedLoc=1&q=for-rent+lagos+ajah+sangotedo+1+bedrooms+maxprice+800000
+
+4.rent in agungi; 1 bedroom; maxprice = 800000
+https://nigeriapropertycentre.com/for-rent/lagos/lekki/agungi?bedrooms=1&maxprice=800000&selectedLoc=1&q=for-rent+lagos+lekki+agungi+1+bedrooms+maxprice+800000
+
+
+5.
+https://nigeriapropertycentre.com/for-rent/lagos/ajah?bedrooms=1&maxprice=800000&selectedLoc=1&q=for-rent+lagos+ajah+1+bedrooms+maxprice+800000
+
+
+
+FULL QUERY:
+https://nigeriapropertycentre.com/for-rent/lagos/ + <location> + ? + bedrooms= + <number of bedrooms> + &maxprice= + <max_price> + &selectedLoc=1&q=for-rent+lagos+ + <location> + <number of bedrooms> + +bedrooms+maxprice+ +<max_price>
+
+To naviagate to the next page
+- add "&page=<page_number>"
+
+
+Locations to be used for code:
+location can either be major or minor
+-Ajah (major)
+-Sangotedo (minor)
+-Lekki (major)
+-Abijo (minor)
+-Ibeju Lekki (lekki-ibeju) (major)
+
+
+classes to search in code
+wp-block-body
+address
+price
+
+keywords in description
+- sharing/shared
+- kitchen
+- self-contained
+- parlour
+- ensuite
+- caution fee
+
+
+functions
+- file to store information
+- excel to input information
+- webscrape function
+
+NOTES:
+
+- After obtaining all the information, it is stored in a dictionary
+- This dictionary is in turn written to a file
+- the file is named with date added to it for more distinction
+- the file can then be read into a pandas dataframe later on
+* consider storing the file in csv format using | as separator rather than , because of the features column which contains a number of items in it
+- in the dataframe, analysis can occur
+	- check the most common amount
+	- is if there is a particular area with more houses for rent
+	- look at the common features that are mentioned
+	- possible that some data is missing, giving room for assumptions. Assumptions will be stated below
+
+Assumptions:
+- Every house has a toilet
+- Every house has a bathroom
+- 
+
+
+converting string containing dictionary to dictionary
+- using the ast library (importing it)
+- using the function .literal_eval(x)
+
+
+
+
+
+
