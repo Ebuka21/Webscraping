@@ -50,7 +50,6 @@ while cont:
 
     query = f'https://nigeriapropertycentre.com/for-rent/lagos/{location.lower()}?bedrooms={bed_number}&maxprice={max_prize}&selectedLoc=1&q=for-rent+lagos+{location}+{bed_number}+bedrooms+maxprice+{max_prize}&page={page_num}'
 
-    print(query)
     
     requests.adapters.DEFAULT_RETRIES = 5
     search_request = requests.get(query)
@@ -88,8 +87,6 @@ while cont:
 
             num += 1
 
-        if num%10 == 0:
-            print(num)
         
         page_num += 1
 
@@ -97,8 +94,7 @@ while cont:
         print('we are not good to go')
         cont = False
 
-#period = str(date.today())
-#period = period.replace(' ', '_')
+
 
 format = '%y-%m-%d_%H:%M'
 
