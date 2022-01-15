@@ -8,6 +8,7 @@ import bs4
 import lxml
 import datetime
 from datetime import date
+from datetime import datetime
 
 #base_url = "https://nigeriapropertycentre.com/for-rent/lagos/"
 
@@ -96,8 +97,12 @@ while cont:
         print('we are not good to go')
         cont = False
 
-period = str(date.today())
+#period = str(date.today())
 #period = period.replace(' ', '_')
+
+format = '%y-%m-%d_%H:%M'
+
+period = datetime.now().strftime(format)
 
 
 file_name = 'result_' + period + '.txt'
