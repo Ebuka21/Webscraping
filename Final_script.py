@@ -9,17 +9,17 @@ import lxml
 import datetime
 from datetime import date
 from datetime import datetime
+import pandas as pd
+
+
+def dict_to_excel(dict_info):
+    data = pd.DataFrame.from_dict(dict_info).transpose()
+    data.to_excel('Test_excel.xlsx', sheet_name='Test creation')
+
 
 #base_url = "https://nigeriapropertycentre.com/for-rent/lagos/"
 
 page_num = 1
-
-house_dict={
-    'location':[],
-    'price':[],
-    'link':[],
-    'features':[]
-}
 
 search_dict = {}
 print('Welcome, answer the following questions to begin web scrape')
@@ -96,12 +96,16 @@ while cont:
 
 
 
-format = '%y-%m-%d_%H:%M'
+#format = '%y-%m-%d_%H:%M'
+format1 ='%y-%m-%d'
 
-period = datetime.now().strftime(format)
+period = datetime.now().strftime(format1)
 
-
+print(period)
 file_name = 'result_' + period + '.txt'
-file = open(file_name, 'w+')
+print(file_name)
+file = open(file_name, 'w')
 file.write(str(search_dict))
 file.close()
+
+dict_to_excel(search_dict)
