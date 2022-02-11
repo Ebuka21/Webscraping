@@ -93,6 +93,12 @@ converting string containing dictionary to dictionary
 - using the ast library (importing it)
 - using the function .literal_eval(x)
 
+Excel file
+function dict_to_excel made to take the dictionary created that contained all the information and put it in an excel sheet.
+done using pandas for easy context
+convert dictionary to dataframe and from dataframe to excel
+
+
 
 
 
