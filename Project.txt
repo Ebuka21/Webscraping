@@ -26,12 +26,11 @@ https://nigeriapropertycentre.com/for-rent/lagos/ajah?bedrooms=1&maxprice=800000
 3. rent in sangotedo ajah; 1 bedroom; maxprice = 800000
 https://nigeriapropertycentre.com/for-rent/lagos/ajah/sangotedo?bedrooms=1&maxprice=800000&selectedLoc=1&q=for-rent+lagos+ajah+sangotedo+1+bedrooms+maxprice+800000
 
-4.rent in agungi; 1 bedroom; maxprice = 800000
+4. rent in agungi; 1 bedroom; maxprice = 800000
 https://nigeriapropertycentre.com/for-rent/lagos/lekki/agungi?bedrooms=1&maxprice=800000&selectedLoc=1&q=for-rent+lagos+lekki+agungi+1+bedrooms+maxprice+800000
 
 
-5.
-https://nigeriapropertycentre.com/for-rent/lagos/ajah?bedrooms=1&maxprice=800000&selectedLoc=1&q=for-rent+lagos+ajah+1+bedrooms+maxprice+800000
+5. https://nigeriapropertycentre.com/for-rent/lagos/ajah?bedrooms=1&maxprice=800000&selectedLoc=1&q=for-rent+lagos+ajah+1+bedrooms+maxprice+800000
 
 
 
