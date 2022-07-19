@@ -12,9 +12,10 @@ from datetime import datetime
 import pandas as pd
 
 
-def dict_to_excel(dict_info):
+def dict_to_excel(dict_info,time):
     data = pd.DataFrame.from_dict(dict_info).transpose()
-    data.to_excel('Test_excel.xlsx', sheet_name='Test creation')
+    data.to_excel('Test_excel.xlsx', sheet_name=period)
+    data.to_csv(period)
 
 def id_num(link):
     id = ''
@@ -30,8 +31,8 @@ def id_num(link):
 page_num = 1
 
 spec_list = ['kitchen', 'shared', 'Prepaid Meter']
-loc_list = []
-LOC = []
+loc_list = ['lekki phase 1','jakande','ikate','agungi','ologolo','chevron','ikota','vgc','ilaje','thomas estate','sangotedo','abijo']
+LOC = ['lekki','ajah','ibeju']
 search_dict = {}
 
 print('Welcome, answer the following questions to begin web scrape')
@@ -81,13 +82,18 @@ while cont:
             id = id_num(info[n].a['href'])
              
             search_dict[id] = {
-                'location':info[n].address.text.strip(' \xa0'), 
+                'adress':info[n].address.text.strip(' \xa0'), 
                 'price':int(info[n].select(".price")[1].text.replace(',','')), 
                 'link':'https://nigeriapropertycentre.com'+info[n].a['href'],
                 'features':''
             }
             
-            
+            for x in search_dict[id]['address']:
+                if x.lower().strip() in loc_list:
+                    search_dict[id]['location'] == x
+                    break
+                elif x.lower().strip() in LOC:
+                    search_dict[id]['location'] == x
 
             new_url = search_dict[id]['link']
             mini_req = requests.get(new_url)
@@ -125,4 +131,4 @@ file = open(file_name, 'w')
 file.write(str(search_dict))
 file.close()
 
-dict_to_excel(search_dict)
+dict_to_excel(search_dict,period)
