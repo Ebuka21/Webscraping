@@ -29,10 +29,14 @@ def id_num(link):
 
 page_num = 1
 
+spec_list = ['kitchen', 'shared', 'Prepaid Meter']
+loc_list = []
+LOC = []
 search_dict = {}
+
 print('Welcome, answer the following questions to begin web scrape')
 
-spec_list = ['kitchen', 'shared', 'Prepaid Meter']
+
 location = input(
     """
     Choose from the following locations:
